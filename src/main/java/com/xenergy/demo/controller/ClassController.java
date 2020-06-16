@@ -19,7 +19,8 @@ public class ClassController {
         ModelAndView modelAndView = new ModelAndView("index");
 
         modelAndView.addObject("className","Xen Energy");
-        modelAndView.addObject("classList", classService.findById(1));
+        modelAndView.addObject("oneClass", classService.findById(1));
+        modelAndView.addObject("classes", classService.findAll());
 
         return modelAndView;
     }

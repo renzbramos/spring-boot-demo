@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -13,14 +13,14 @@
 <table>
     <thead>
     <th>
-        <span th:text="${classList.name}"></span>
+        <span th:text="${oneClass.name}"></span>
+        <span th:text="${oneClass.numberOfStudents}"></span>
     </th>
     </thead>
     <tbody>
-    <tr>
-        <td>
-            <span th:text="${classList.numberOfStudents}"></span>
-        </td>
+    <tr th:each="class : ${classes}">
+        <td th:text="${class.name}"></td>
+        <td th:text="${class.numberOfStudents}"></td>
     </tr>
     </tbody>
 
